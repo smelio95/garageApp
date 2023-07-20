@@ -1,0 +1,44 @@
+  /*Section véhicule*/
+  .used-vehicles {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .vehicle {
+    width: 30%;
+  }
+  
+  .vehicle img {
+    width: 100%;
+  }
+  
+  .vehicle-description {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .vehicle-description p {
+    margin-bottom: 5px;
+  }
+  
+  .vehicle-description hr {
+    border: 0.5px solid;
+    margin: 10px 0;
+  }
+  
+  .details-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    color: white;
+    background-color: #252625;
+    border: none;
+  }
+
+  .space{
+    height: 20px;
+    margin-bottom: 50px;
+  }
+   

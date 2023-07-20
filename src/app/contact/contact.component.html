@@ -1,0 +1,56 @@
+<!-- interpolation : titre de page -->
+<h2>{{ titre }}</h2>
+
+<!-- interpolation : phrase d'accroche pour remplir le formulaire -->
+<p>{{ contact }}</p>
+
+<!-- Confirmation d'envoi du formulaire -->
+<div [ngClass]="{'confirmation-message': formSubmitted, 'bg-success': formSubmitted}" *ngIf="formSubmitted  && !formIncomplete">
+  Merci d'avoir envoyer le formulaire! Votre requête sera traité sous 24 heurs
+</div>
+
+<!-- Message d'erreur si le formulaire est incomplet -->
+<div *ngIf="formIncomplete" class="alert alert-danger">
+  Veuillez remplir tous les champs du formulaire.
+</div>
+
+<!-- Formulaire de contact -->
+<form>
+  <!-- champs : nom -->
+  <div class="form-group">
+    <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="nom" required>
+    <label for="nom">Nom</label>
+  </div>
+  <!-- champs : prenom -->
+  <div class="form-group">
+    <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="prenom" required>
+    <label for="prenom">Prénom</label>
+  </div>
+  <!-- champs : email -->
+  <div class="form-group">
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+    <label for="email">Email</label>
+  </div>
+  <!-- champs : telephone -->
+  <div class="form-group">
+    <input type="tel" class="form-control" id="telephone" name="telephone" [(ngModel)]="telephone" required>
+    <label for="telephone">Téléphone</label>
+  </div>
+  <!-- champs : choix du sujet -->
+  <div class="form-group">
+    <label for="subject">Sujet</label>
+    <select id="subject" name="subject" [(ngModel)]="subject" required>
+      <option value="" disabled selected>Choisissez un sujet</option>
+      <option value="carrosserie">Service Carrosserie</option>
+      <option value="entretien">Service Entretien</option>
+      <option value="mecanique">Service Mécanique</option>
+      <option value="vehicule">Véhicule d'occasion</option>
+    </select>
+  </div>
+  <!-- bouton : soumettre l'envoi du formulaire -->
+  <div class="form-group">
+    <textarea class="form-control" id="message" name="message" [(ngModel)]="message" required></textarea>
+    <label for="sujet">Message</label>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="submitForm()">Envoyer</button>
+</form>

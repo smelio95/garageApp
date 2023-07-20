@@ -1,0 +1,17 @@
+<!-- login.component.html (Frontend) -->
+<h2>Veuillez vous identifier</h2>
+<div class="login-container">
+  <form (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+  </form>
+</div>
+<!-- Afficher le message d'authentification réussie s'il est défini -->
+<p *ngIf="authenticationMessage">{{ authenticationMessage }}</p>

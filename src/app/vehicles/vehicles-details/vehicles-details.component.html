@@ -1,0 +1,10 @@
+<div class="container mt-4">
+  <h2>Détails du véhicule sélectionné</h2>
+  <div *ngIf="selectedVehicle">
+    <p><strong>Marque :</strong> {{ selectedVehicle.brand }}</p>
+    <p><strong>Année :</strong> {{ selectedVehicle.year }}</p>
+    <p><strong>Carburant :</strong> {{ selectedVehicle.fuel }}</p>
+    <p><strong>Kilométrage :</strong> {{ selectedVehicle.kilometers }} km</p>
+    <p><strong>Prix :</strong> {{ selectedVehicle.price }} €</p>
+  </div>
+</div>
