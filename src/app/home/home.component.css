@@ -1,0 +1,115 @@
+/*banniere*/
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+  
+  .banner-text {
+    flex: 1;
+  }
+  
+  .banner-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-text p {
+    font-size: 16px;
+  }
+  
+  .banner img {
+    max-width: 50%;
+  }
+  
+  /*Services*/
+  .spacer {
+    height: 20px;
+  }
+  
+  .services {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .service {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    margin-bottom: 20px;
+  }
+
+  .service:not(:last-child) {
+    margin-right: 70px;
+  }
+  
+  
+  .service img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .service-text h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 10;
+    text-align: center;
+  }
+  
+  .service-text p {
+    font-size: 15px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /*Section véhicule*/
+  .used-vehicles {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .vehicle {
+    width: 30%;
+  }
+  
+  .vehicle img {
+    width: 100%;
+  }
+  
+  .vehicle-description {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .vehicle-description p {
+    margin-bottom: 5px;
+  }
+  
+  .vehicle-description hr {
+    border: 0.5px solid;
+    margin: 10px 0;
+  }
+  
+  .details-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    color: white;
+    background-color: #252625;
+    border: none;
+  }
+
+  .space{
+    height: 20px;
+    margin-bottom: 50px;
+  }

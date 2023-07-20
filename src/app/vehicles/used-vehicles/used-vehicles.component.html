@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4>Kilométrage</h4>
+    <input type="range" class="form-range" min="0" max="2" [(ngModel)]="filter.kilometers" (ngModelChange)="applyFilter()" />
+    <div class="d-flex justify-content-between">
+      <p>{{ filter.minKilometers }} km</p>
+      <p>{{ filter.maxKilometers }} km</p>
+    </div>
+    <span *ngIf="filter.kilometers === 1">0 km - 100000 km</span>
+    <span *ngIf="filter.kilometers === 2">100000 km - 300000 km</span>
+    <button class="btn btn-secondary" (click)="reinitializeKilometers()">Réinitialiser</button>
+  </div>
+
+  <div class="col-md-4">
+    <h4>Prix</h4>
+    <input type="range" class="form-range" min="0" max="2" [(ngModel)]="filter.price" (ngModelChange)="applyFilter()" />
+    <div class="d-flex justify-content-between">
+      <p>{{ filter.priceMin }} €</p>
+      <p>{{ filter.priceMax }} €</p>
+    </div>
+    <span *ngIf="filter.price === 1">0 € - 10000 €</span>
+    <span *ngIf="filter.price === 2">10000 € - 20000 €</span>
+    <button class="btn btn-secondary" (click)="reinitializePrice()">Réinitialiser</button>
+  </div>
+
+  <div class="col-md-4">
+    <h4>Années</h4>
+    <input type="range" class="form-range" min="0" max="3" [(ngModel)]="filter.year" (ngModelChange)="applyFilter()" />
+    <div class="d-flex justify-content-between">
+      <p>{{ filter.minYear }}</p>
+      <p>{{ filter.maxYear }}</p>
+    </div>
+    <span *ngIf="filter.year === 1">1990 - 2000</span>
+    <span *ngIf="filter.year === 2">2000 - 2010</span>
+    <span *ngIf="filter.year === 3">2010 - 2023</span>
+    <button class="btn btn-secondary" (click)="reinitializeYear()">Réinitialiser</button>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    <h2>Liste des véhicules d'occasion</h2>
+    <div class="d-flex flex-wrap justify-content-start">
+      <div *ngFor="let vehicle of vehiclesFilters" class="card mt-3 mx-2">
+        <img src="../assets/image/vehicle.png" alt="Véhicule d'occasion" class="card-img-top" style="height: 150px;">
+        <div class="card-body">
+          <h5 class="card-title">{{ vehicle.brand }}</h5>
+          <p class="card-text">Année : {{ vehicle.year }}</p>
+          <p class="card-text">Carburant : {{ vehicle.fuel }}</p>
+          <p class="card-text">Kilométrage : {{ vehicle.kilometers }} km</p>
+          <p class="card-text">Prix : {{ vehicle.price }} €</p>
+          <button class="btn btn-primary" (click)="vehicleUsedDetails(vehicle)">Détails</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
